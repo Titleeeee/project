@@ -1,0 +1,216 @@
+Tea = 19
+s = 0
+m = 5
+l = 10 
+xl = 15
+Ts = Tea + s
+Tm = Tea + m
+Tl = Tea + l
+Txl = Tea + xl
+Top = 10
+Top_2 = Top+Top
+avg = 0
+
+def MENU():
+    print("        ┌=======================================┐")
+    print("        ╎          |ร้าน ตั้งหวังเกือบเจ้ง|           ╎" )
+    print("        └=======================================┘\n")
+    print("======================== MENU ==============================\n")
+    print("| 1.ชานมใต้หวัน          (Taiwan Mile Tea)        ----- 19 ฿ |")
+    print("| 2.ชานมกาแฟ           (Coffee Milk Tea)        ----- 19 ฿ |")
+    print("| 3.ชานมโกโก้           (Cocoa Milk Tea)         ----- 19 ฿ |")
+    print("| 4.ชานมเผือก           (Taro Milk Tea)          ----- 19 ฿ |")
+    print("| 5.ชานมลิ้นจี่            (Lychee Milk Tea)        ----- 19 ฿ |")
+    print("| 6.ชานมคาราเมล        (caramel Milk Tea)       ----- 19 ฿ |")
+    print("| 7.ชานมน้ำผึ้ง           (Honey Milk Tea)         ----- 19 ฿ |")
+    print("| 8.ชาดำเย็น            (Thai Tea)               ----- 19 ฿ |")
+    print("| 9.ชาไทย              (Thai Milk Tea)          ----- 19 ฿ |")
+    print("| 10.ชาเขียว            (green Tea)              ----- 19 ฿ |")
+    print("| 11.ชานมเเอปเปิ้ล       (Appln Milk Tea)         ----- 19 ฿ |\n")
+    print("============================================================\n")
+
+    
+MENU()
+
+Tea_choice = int(input('Please choose a flavor : '))
+Tea_list = ['ชานมใต้หวัน','ชานมกาแฟ','ชานมโกโก้','ชานมเผือก','ชานมลิ้นจี่','ชานมคาราเมล','ชานมน้ำผึ้ง','ชาดำเย็น','ชาไทย','ชาเขียว','ชานมเเอปเปิ้ล',]
+Tea_sum = ''
+
+if Tea_choice >= 1:
+    Tea_sum = Tea_sum + Tea_list[Tea_choice - 1]
+    print('\nNow you choose :',Tea_sum ,'ราคา :',Tea,'฿')
+
+Topping = input('\nคุณต้องการเลือกToppingหรือไม่ Y/N : ')
+if Topping == 'N' or Topping == 'n':
+
+    sweetness = int(input('\nกรุณาเลือกระดับความหวาน : 50 100 125 150 200 : ' ))
+    if sweetness >= 50 or sweetness == 200:
+        
+        print("\n======== Glass ========\n")
+        print("| 1.s      ----- Free ฿ |")
+        print("| 2.M      ----- 5 ฿    |")
+        print("| 3.L      ----- 10 ฿   |")
+        print("| 4.XL     ----- 15 ฿   |\n")
+        print("=========================\n")
+        Glass = int(input('กรุณาเลือกขนาดเเก้ว : '))
+        Glass_list = ['S','M','L','XL',]
+        Glass_sum = ''
+        if Glass == 1:
+            Glass_sum = Glass_sum + Glass_list[Glass - 1]
+            print('\nNow you choose :',Tea_sum,'+',Glass_sum ,'ราคา :',Tea + s,'฿')
+        if Glass == 2:
+            Glass_sum = Glass_sum + Glass_list[Glass - 1]
+            print('\nNow you choose :',Tea_sum,'+',Glass_sum ,'ราคา :',Tea + m,'฿')
+        if Glass == 3:
+            Glass_sum = Glass_sum + Glass_list[Glass - 1]
+            print('\nNow you choose :',Tea_sum,'+',Glass_sum ,'ราคา :',Tea + l,'฿')
+        if Glass == 4:
+            Glass_sum = Glass_sum + Glass_list[Glass - 1]
+            print('\nNow you choose :',Tea_sum,'+',Glass_sum ,'ราคา :',Tea + xl,'฿')
+        while True:
+            money = int(input('\nกรุณาใส่จำนวณเงิน : '))
+            if money == Ts or money == Tm or money == Tl or money == Txl:
+                print('\nกรูณารอสินค้าสักครู่ ขอบคุณที่ใช้บริการ')
+                break
+            elif money < Ts or money < Tm or money < Tl or money < Txl:
+                print('\nกรูณาใส่เงินตามจำนวณ')
+################################################################################################################## ตอนที่ 2              
+elif Topping == 'Y' or Topping == 'y':
+    
+    print("\n========== Topping ============\n")
+    print("| 1.วุ่นอโล          ----- 10 ฿ |")
+    print("| 2.สโนว์บุก         ----- 10 ฿ |")
+    print("| 3.ไข่มุกโนบิ        ----- 10 ฿ |")
+    print("| 4.เยลลี่ผลไม้       ----- 10 ฿ |")
+    print("| 5.บุกราวน์ชูการ์     ----- 10 ฿ |\n")
+    print("===============================\n")
+    
+    Topping_choice = int(input('Please choose a flavor : '))
+    Toping_list = ['วุ่นอโล','สโนว์บุก','ไข่มุกโนบิ','เยลลี่ผลไม้','บุกราวน์ชูการ์',]
+    Topping_sum = ''
+    
+    if Topping_choice >= 1:
+        Topping_sum = Topping_sum + Toping_list[Topping_choice - 1]
+        print('\nNow you choose :',Tea_sum,'+',Topping_sum ,'ราคา',Tea + Top, '฿')
+
+        avg = avg + 1
+################################################################################################################## ตอนที่ 3
+    Topping_2 = (input('\nคุณต้องการเลือกToppingเพิ่มหรือไม่_Y/N :'))
+    if Topping_2 == 'N' or Topping_2 == 'n':
+        sweetness = int(input('\nกรุณาเลือกระดับความหวาน : 50 100 125 150 200 : ' ))
+        if sweetness >= 50 or sweetness == 200:
+        
+            print("\n======== Glass ========\n")
+            print("| 1.s      ----- Free ฿ |")
+            print("| 2.M      ----- 5 ฿    |")
+            print("| 3.L      ----- 10 ฿   |")
+            print("| 4.XL     ----- 15 ฿   |\n")
+            print("=========================\n")
+            Glass = int(input('กรุณาเลือกขนาดเเก้ว : '))
+            Glass_list = ['S','M','L','XL',]
+            Glass_sum = ''
+            if Glass == 1:
+                Glass_sum = Glass_sum + Glass_list[Glass - 1]
+                print('\nNow you choose :',Tea_sum,'+',Glass_sum ,'ราคา :',Tea + s + Top,'฿')
+            if Glass == 2:
+                Glass_sum = Glass_sum + Glass_list[Glass - 1]
+                print('\nNow you choose :',Tea_sum,'+',Glass_sum ,'ราคา :',Tea + m+ Top,'฿')
+            if Glass == 3:
+                Glass_sum = Glass_sum + Glass_list[Glass - 1]
+                print('\nNow you choose :',Tea_sum,'+',Glass_sum ,'ราคา :',Tea + l+ Top,'฿')
+            if Glass == 4:
+                Glass_sum = Glass_sum + Glass_list[Glass - 1]
+                print('\nNow you choose :',Tea_sum,'+',Glass_sum ,'ราคา :',Tea + xl+ Top,'฿')
+            while True:
+                money = int(input('\nกรุณาใส่จำนวณเงิน : '))
+                if money == Ts + Top or money == Tm + Top or money == Tl + Top or money == Txl + Top:
+                    print('\nกรูณารอสินค้าสักครู่ ขอบคุณที่ใช้บริการ')
+                    break
+                elif money < Ts + Top or money < Tm + Top or money < Tl + Top or money < Txl + Top:
+                    print('\nกรูณาใส่เงินตามจำนวณ')
+################################################################################################################## ตอนที่ 4
+    elif Topping_2 == 'Y'or'y':
+        
+            print("\n========== Topping ============\n")
+            print("| 1.วุ่นอโล          ----- 10 ฿ |")
+            print("| 2.สโนว์บุก         ----- 10 ฿ |")
+            print("| 3.ไข่มุกโนบิ        ----- 10 ฿ |")
+            print("| 4.เยลลี่ผลไม้       ----- 10 ฿ |")
+            print("| 5.บุกราวน์ชูการ์     ----- 10 ฿ |\n")
+            print("===============================\n")
+
+        
+
+    Topping_choice_2 = int(input('Please choose a flavor : '))
+    Toping_list = ['วุ่นอโล','สโนว์บุก','ไข่มุกโนบิ','เยลลี่ผลไม้','บุกราวน์ชูการ์',]
+    Topping_sum_2 = ''
+    
+    if Topping_choice_2 == Topping_choice:
+        print('\n คุณเลือกรายการซ้ำกรุณาเลือกใหม่ \n')
+
+    Topping_choice_2 = int(input('Please choose a flavor : '))
+    if Topping_choice_2 >= 1:
+        Topping_sum_2 = Topping_sum_2 + Toping_list[Topping_choice_2 - 1]
+        print('\n Now you choose :',Tea_sum,'+',Topping_sum , '+',Topping_sum_2,Tea + Top + Top,'฿\n')
+        sweetness = int(input('\nกรุณาเลือกระดับความหวาน : 50 100 125 150 200 : ' ))
+        if sweetness >= 50 or sweetness == 200:
+        
+            print("\n======== Glass =========\n")
+            print("| 1.s      ----- Free ฿ |")
+            print("| 2.M      ----- 5 ฿    |")
+            print("| 3.L      ----- 10 ฿   |")
+            print("| 4.XL     ----- 15 ฿   |\n")
+            print("=========================\n")
+            Glass = int(input('กรุณาเลือกขนาดเเก้ว : '))
+            Glass_list = ['S','M','L','XL',]
+            Glass_sum = ''
+            if Glass == 1:
+                Glass_sum = Glass_sum + Glass_list[Glass - 1]
+                print('\nNow you choose :',Tea_sum,'+',Glass_sum ,'+',Topping_sum,'+',Topping_sum_2,'ราคา :',Tea + s + Top_2,'฿')
+            if Glass == 2:
+                Glass_sum = Glass_sum + Glass_list[Glass - 1]
+                print('\nNow you choose :',Tea_sum,'+',Glass_sum ,'+',Topping_sum,'+',Topping_sum_2,'ราคา :',Tea + m + Top_2,'฿')
+            if Glass == 3:
+                Glass_sum = Glass_sum + Glass_list[Glass - 1]
+                print('\nNow you choose :',Tea_sum,'+',Glass_sum ,'+',Topping_sum,'+',Topping_sum_2,'ราคา :',Tea + l + Top_2,'฿')
+            if Glass == 4:
+                Glass_sum = Glass_sum + Glass_list[Glass - 1]
+                print('\nNow you choose :',Tea_sum,'+',Glass_sum ,'+',Topping_sum,'+',Topping_sum_2,'ราคา :',Tea + xl + Top_2,'฿')
+            while True:
+                money = int(input('\nกรุณาใส่จำนวณเงิน : '))
+                if money == Ts + Top_2 + Tea or money == Tm + Top_2 + Tea or money == Tl + Top_2 + Tea or money == Txl + Top_2 + Tea:
+                    print('\nกรูณารอสินค้าสักครู่ ขอบคุณที่ใช้บริการ')
+                    break
+                elif money < Ts + Top_2 + Tea or money < Tm + Tea + Top_2 or money + Tea < Tl + Top_2 or money + Tea < Txl + Top_2 + Tea:
+                    print('\nกรูณาใส่เงินตามจำนวณ')
+    
+    
+
+
+
+
+
+    
+
+
+    
+     
+    
+        
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
